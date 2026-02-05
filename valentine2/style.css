@@ -1,0 +1,288 @@
+/* ===============================
+   COLOR VARIABLES (EDIT THESE)
+   =============================== */
+:root {
+  --red-main: #c1121f;        /* Main romantic red */
+  --red-soft: #e63946;        /* Softer red for blends */
+  --pink-glow: #ffb3c1;       /* Highlight glow */
+  --black-main: #0b0b0b;      /* Primary dark */
+  --white-main: #ffffff;      /* Primary light */
+}
+
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--black-main);
+  color: var(--white-main);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--black-main),
+    #1a1a1a,
+    #000000
+  );
+  color: var(--white-main);
+}
+
+.hero-text {
+  font-size: 4rem;
+  font-weight: 800;
+  animation: fadeIn 2s ease forwards;
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  animation: fadeIn 3s ease forwards;
+}
+
+/* ===============================
+   NAME REVEAL SECTION
+   =============================== */
+.reveal-section {
+  background: linear-gradient(
+    to bottom,
+    var(--white-main),
+    #f9f9f9
+  );
+  color: #000;
+}
+
+.small-text {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.name {
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    var(--red-main),
+    var(--red-soft)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   PLAYFUL SECTION
+   =============================== */
+.playful-section {
+  background: linear-gradient(
+    160deg,
+    #000000,
+    #121212,
+    var(--black-main)
+  );
+  color: var(--white-main);
+}
+
+.love-card {
+  padding: 40px;
+  border-radius: 14px;
+  cursor: pointer;
+  background: linear-gradient(
+    145deg,
+    #1a1a1a,
+    #0e0e0e
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.35s ease;
+}
+
+.love-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(
+    135deg,
+    var(--red-main),
+    var(--red-soft)
+  );
+}
+
+.special:hover {
+  background: linear-gradient(
+    135deg,
+    var(--white-main),
+    #f2f2f2
+  );
+  color: #000;
+}
+
+/* ===============================
+   LETTER SECTION
+   =============================== */
+.letter-section {
+  background: linear-gradient(
+    to bottom,
+    var(--white-main),
+    #fff5f7
+  );
+  color: #000;
+}
+
+.letter-section h2 {
+  font-weight: 700;
+}
+
+.letter {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+/* Sequential fade-in */
+.letter:nth-of-type(1) { animation-delay: 0.3s; }
+.letter:nth-of-type(2) { animation-delay: 0.8s; }
+.letter:nth-of-type(3) { animation-delay: 1.3s; }
+.letter:nth-of-type(4) { animation-delay: 1.8s; }
+
+.end {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    var(--red-main),
+    var(--pink-glow)
+  );
+   text-align: center;
+  margin-top: 3rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   BALLOON SECTION
+   =============================== */
+.balloon-section {
+  background: radial-gradient(
+    circle at top,
+    #1a0000,
+    #000000
+  );
+  color: var(--white-main);
+  overflow: hidden;
+}
+
+.balloons {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    var(--red-soft),
+    var(--red-main)
+  );
+  border-radius: 50% 50% 50% 50%;
+  animation: floatUp 8s infinite ease-in;
+  opacity: 0;
+}
+
+.balloon:nth-child(1) {
+  left: 20%;
+}
+
+.balloon:nth-child(2) {
+  left: 50%;
+  animation-delay: 2s;
+  background: linear-gradient(
+    to bottom,
+    var(--white-main),
+    #f0f0f0
+  );
+}
+
+.balloon:nth-child(3) {
+  left: 75%;
+  animation-delay: 4s;
+}
+
+/* ===============================
+   FINAL SECTION
+   =============================== */
+.final-section {
+  background: linear-gradient(
+    to top,
+    #000000,
+    #140000
+  );
+  color: var(--white-main);
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+   =============================== */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2.8rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .love-card {
+    padding: 30px;
+  }
+}
